@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
 
-//¤½¦¡: f(n,k)=(f(n-1,k)+k)%n
-int josephus(int n, int k) { //«D»¼¦^ª©¥»
-	int s = 0; //¥u¦³¤@­Ó¤H®É¡A¤@©w³Ñ¤U¥L(½s¸¹0) f(1,k)=0
+//å…¬å¼: f(n,k)=(f(n-1,k)+k)%n
+int josephus(int n, int k) { //ééå›ç‰ˆæœ¬
+	int s = 0; //åªæœ‰ä¸€å€‹äººæ™‚ï¼Œä¸€å®šå‰©ä¸‹ä»–(ç·¨è™Ÿ0) f(1,k)=0
 	for (int i = 2; i <= n; i++){
-        s = (s + k) % i;
+        s = (s + k) % i;  //ä¸Šä¸€å€‹ä½ç½®ï¼Œå¾€å¾Œæ•¸kæ ¼ï¼Œå†%äººæ•¸
 	}
 
 	return s;
 }
-int josephus_recursion(int n, int k) { //»¼¦^ª©¥»
+int josephus_recursion(int n, int k) { //éå›ç‰ˆæœ¬
 	return n > 1 ? (josephus_recursion(n - 1, k) + k) % n : 0;
 }
 int main() {
